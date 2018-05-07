@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<script>
+
+   // var text = "cat,bat,sat,fat";
+   // var f = text.search(/at/);
+   // alert(f);
+   //
+   /*var book = {
+       _year:2004,
+       edition:1
+   };
+   Object.defineProperty(book,"year",{
+       get:function(){
+           return this._year;
+       },
+       set:function (newValue){
+           if(newValue > 2004) {
+               this.year = newValue;
+               this.edition += newValue - 2004;
+           }
+       }
+   });
+   book.year = 2005;
+   alert(book.edition);*/
+
+   /*var book = {};
+   Object.defineProperties(book,{
+       _year:{
+           value:2004
+       },
+   edition:{
+           value:1
+   },
+       year: {
+           get:function(){
+               return this._year;
+           },
+           set: function(newValue) {
+               if (newValue > 2004) {
+                   this._year = newValue;
+                   this.edtion += newValue - 2004;
+               }
+
+           }
+
+           }
+
+   });
+   var descriptor = Object.getOwnPropertyDescriptor(book,"_year");
+   alert(descriptor.value);
+   alert(descriptor.configurable);*/
+
+  /* function person (age,name,job){
+       this.age = age;
+       this.name = name;
+       this.job = job;
+       this.sayname = function() {
+           alert(this.name);
+       }
+   }
+
+   var person1 = new person(21,"bingzhong","student");
+   alert(person1.age);
+ person1.sayname();
+ alert(person1 instanceof Object);*/
+
+  /*function Person(name,age,job) {
+      this.name = name;
+      this.age = age;
+      this.job = job;
+      this.sayname = sayname;
+  }
+  function sayname () {
+      alert(this.name);
+  }
+  var person1 = new Person("caibingzhong",21,"student");
+  var person2 = new Person ("caibingzhong1",21,"student");
+  person1.sayname();*/
+
+  /*function Person() {
+
+  }
+  Person.prototype.name = "caibingzhong";
+  Person.prototype.age = 21;
+  Person.prototype.job = "student";
+  Person.prototype.sayname = function(){
+      alert(this.name);
+  };
+  var person1 = new Person();
+  person1.sayname();
+  person1.name = "caibingzhong1";
+  alert(person1.name);
+  alert(person1.constructor);
+  alert(Object.getPrototypeOf(person1));*/
+
+  /*function Person() {
+
+  }
+  Person.prototype.name = "caibingzhong";
+  Person.prototype.age = 29;
+  Person.prototype.sayname = function(){
+      alert(this.name);
+  };
+  var person1 = new Person();
+  var person2 = new Person();
+
+  alert(person1.hasOwnProperty("name"));
+  alert("name" in person1);
+*/
+  /*function Person(){
+
+  }
+  Person.prototype = {
+      name:"caibingzhong",
+      age: 21,
+      job: "student",
+      sayname : function() {
+          alert(this.name);
+      }
+  };*/
+
+  /*function Person() {
+  }
+  var friend = new Person();
+   Person.prototype = {
+       name: "caibingzhong",
+       age: 21,
+       job : "student",
+       sayname : function() {
+           alert(this.name);
+       }
+   };
+  friend.sayname();*/
+
+ /* function Person(name,age,job) {
+      this.name = name;
+      this.job = job;
+      this.age = age;
+      this.friends = ["huichen","jiahen"]
+  }
+  Person.prototype = {
+      construct: Person,
+      sayname : function(){
+          alert(this.name);
+      }
+  }
+   var person1 = new Person("caibingzhong",21,"computer");
+  var person2 = new Person("caibingzhong1",21,"student");
+    person1.friends.push("van");
+    alert(person1.friends);
+    alert(person2.friends);*/
+
+ /* function Person(name,age,job){
+      this.name = name;
+      this.job = job;
+      this.age = age;
+      if(typeof this.sayname != "function"){
+          Person.prototype.sayname = function(){
+              alert(this.name); alert(this.name);
+
+          }
+      }
+  }
+  Person.prototype = {
+      construct:Person,
+  };
+  var friend = new Person("caibingzhong",21,"student");
+  friend.sayname();
+
+   function SpecialArray(){
+       var values = new Array();
+       values.push.apply(values,arguments);
+       values.toPipedString = function() {
+           return this.join("|");
+       }
+   }*/
+ function Person (name,age,job){
+     var o = new Object();
+     o.sayname = function(){
+         alert(name);
+     };
+     return o;
+ }
+
+</script>
+</body>
+</html>
